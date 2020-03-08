@@ -1,0 +1,3 @@
+<!--miniprogram/pages/infos/infos.wxml-->
+<web-view src="{{ url }}"></web-view>
+<!-- <text>链接：{{ url }}</text> -->

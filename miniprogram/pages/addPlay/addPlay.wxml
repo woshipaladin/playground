@@ -1,0 +1,41 @@
+<!--miniprogram/pages/addPlay/addPlay.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+        <view class="section__title">球场名字</view>
+        <input value="{{ form.name }}" bindblur="formName" name="name" placeholder="输入球场名称" />
+    </view>
+    <view class="section">
+        <view class="section__title">上传封面照片</view>
+        <view class="uploader-container">
+          <image class="uploader-image" src="{{form.picture}}" mode="aspectFit" bindtap="previewImg"></image>
+        </view>
+    </view>
+    <view class="section">
+        <view class="section__title">球场地址</view>
+        <input value="{{ form.address }}" name="address" placeholder="选择球场地址" bindtap="toAdd" />
+    </view>
+    <view class="section section_gap">
+        <view class="section__title">强烈推荐</view>
+        <switch checked="{{ form.isHot }}" name="isHot" color="#007aff" bindchange="changeHot"/>
+    </view>
+    <view class="section section_gap">
+        <view class="section__title">是否免费</view>
+        <switch checked="{{ form.isFree }}" name="isFree" color="#007aff" bindchange="changeFree"/>
+    </view>
+    <view class="section section_gap">
+        <view class="section__title">球场类型</view>
+        <checkbox-group name="from.types" bindchange="changeTypes">
+          <label wx:for="{{items}}" wx:key="value">
+            <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+        </checkbox-group>
+    </view>
+    <view class="section">
+        <view class="section__title">网页地址</view>
+        <input value="{{ form.url }}" name="url" placeholder="输入网页地址" bindblur="urls"/>
+    </view>
+    <view class="btn-area">
+        <button formType="submit">提交</button>
+        <button formType="reset">重置</button>
+    </view>
+</form>

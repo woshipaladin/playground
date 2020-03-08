@@ -1,0 +1,16 @@
+/* miniprogram/pages/addPlay/addPlay.wxss */
+
+.section {
+  margin: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+label {
+  margin-right: 12px;
+}
+
+.section__title {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
